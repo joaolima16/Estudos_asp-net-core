@@ -1,4 +1,4 @@
-
+@model UserModel
 @{
     ViewData["Title"] = "Cadastro";
 }
@@ -8,10 +8,10 @@
 
 <div class="Container">
     <section class="Wrapper">
-        <form class="Wrapper_Form">
-            <input type="email" placeholder ="Email" class="Input_Chield"/>
-            <input type="password" placeholder="Senha"  class="Input_Chield"/>
-           <button type="button" class="btn btn-outline-secondary">Enviar</button>
+        <form class="Wrapper_Form" asp-action="Register" method="post">
+            <input type="email" asp-for="Email" placeholder ="Email" class="Input_Chield"/>
+            <input type="password"  asp-for="Password"  placeholder="Senha"  class="Input_Chield"/>
+           <button type="submit" class="btn btn-outline-secondary">Registrar</button>
         </form>
     </section>
 

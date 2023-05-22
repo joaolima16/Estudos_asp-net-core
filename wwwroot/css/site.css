@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
   background-color: #1d1d1d;
   color: #fff;
+  height: 100vh;
 }
