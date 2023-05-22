@@ -9,5 +9,6 @@ namespace login_registro_asp.Repository
     public interface IUser
     {
         UserModel Add(UserModel user);
+        List<UserModel> SelectUsers(UserModel user);
     }
 }
