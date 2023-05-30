@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using login_registro_asp.Data;
 using login_registro_asp.Models;
 using login_registro_asp.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -18,9 +12,7 @@ namespace login_registro_asp.Controllers
         public Login(IUser IUser) => _IUser = IUser;
 
         private readonly ILogger<Login> _logger;
-        public async Task OnGetAsync(){
-  
-        }
+
         public IActionResult Index()
         {
             
@@ -30,18 +22,18 @@ namespace login_registro_asp.Controllers
         public IActionResult listUsers(UserModel user){
 
 
-                List<UserModel> userLst = _IUser.SelectUsers(user);
+                List<UserModel> userLst = _IUser.SelectUser(user);
 
                 bool userExists = userLst.Any();
                 if(userExists ==true)
                 {
-                    Console.WriteLine("Usuário encontrado");
+                    return RedirectToAction("Index", "TableUsers");
                 }
                 else{
 
                     Console.WriteLine("Usuário não encontrado");
                 }
-                return RedirectToAction("Index");
+                return Ok();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

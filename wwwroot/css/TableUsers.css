@@ -1,0 +1,13 @@
+.caption-top{
+    background-color: transparent;
+}
+.HeaderTable{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #fff;
+}
+.ContentTd{
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}

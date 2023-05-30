@@ -20,7 +20,13 @@ namespace login_registro_asp.Repository
             return user;
         }
 
-        public List<UserModel> SelectUsers(UserModel user)
+        public List<UserModel> lstUsers()
+        {
+            List<UserModel> lstUsers = new List<UserModel>( _userContext.user.ToList());
+            return lstUsers;
+        }
+
+        public List<UserModel> SelectUser(UserModel user)
         {
             var _user =  _userContext.user.Where(S => S.Email == user.Email && S.Password == user.Password)
             .ToList();
